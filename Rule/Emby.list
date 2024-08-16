@@ -1,0 +1,9 @@
+[Rule]
+# Emby
+
+IP-CIDR,103.177.137.228/32, Emby
+DOMAIN-SUFFIX,media.nijigem.by, Emby
+DOMAIN-SUFFIX,emby.bangumi.ca, Emby
+
+DOMAIN-SUFFIX,emby.pilipiliultra.top, Emby
+DOMAIN-SUFFIX,stream_pilipili.misakaf.org, Emby
