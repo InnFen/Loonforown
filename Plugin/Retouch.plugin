@@ -1,5 +1,5 @@
 #!name = 醒图会员解锁
-#!desc = 请严格填写数据，禁用则共享会员失效。建议醒图版本为7.3.0及以下。以下
+#!desc = 请严格填写数据，禁用则共享会员失效。建议醒图版本为7.3.0及以下。
 #!tag = 解鎖
 #!system = 
 #!system_version = 
@@ -10,7 +10,7 @@
 
 [Script]
 
-# 醒图会员(2024-03-20)
+# 醒图会员(2024-03-20)@InnFen
 http-request ^https:\/\/lv-biz-api-sinfonlineb\.ulikecam\.com\/commerce\/v1\/subscription\/user_info script-path=https://raw.githubusercontent.com/InnFen/Loonforown/main/Script/currency.js, timeout=20, tag = 解锁VIP权益
 
 [mitm] 
