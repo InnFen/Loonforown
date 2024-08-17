@@ -5,7 +5,7 @@
 #!system = 
 #!system_version = 
 #!loon_version = 3.2.1(732)
-#!icon = https://gitlab.com/lodepuly/iconlibrary/-/raw/main/App_icon/120px/DiDi.png
+#!icon = https://raw.githubusercontent.com/InnFen/Loonforown/main/Icon/DiDi.png
 #!date = 2024-08-12 17:38:05
 
 [Rule]
