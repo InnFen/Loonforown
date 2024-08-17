@@ -9,13 +9,16 @@
 #!date = 2024-08-18 03:59:55
 
 [Rewrite]
+
 #播放页开通提示移除
 http://vip.bz.mgtv.com/client/dynamic_entry url reject
 
 [Script]
+
 #国区
 http-request ^http[s]?:\/\/mobile\.api\.mgtv\.com\/v[0-9]\/(playlist|video\/album|video\/relative|video\/list).*$ script-path = https://raw.githubusercontent.com/InnFen/Loonforown/main/Script/MangoTV.js, tag = 芒果tv会员Header
 http-response ^https://nuc.api.mgtv.com/GetUserInfo script-path = https://raw.githubusercontent.com/InnFen/Loonforown/main/Script/MangoTVBody.js, requires-body = true, tag = 芒果tv会员Body
+http-response ^https:\/\/me\.bz\.mgtv\.com\/v3\/module\/list\? script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, tag = 我的页面处理
 
 #港区
 http-request ^https://mobile.api.mgtv.com/v8/video/getSource script-path = https://raw.githubusercontent.com/InnFen/Loonforown/main/Script/MangoTV.js, tag = 港区MangoTV会员
