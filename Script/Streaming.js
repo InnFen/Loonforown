@@ -63,7 +63,7 @@ $.token = $.getdata("ipinfo_token") ? $.getdata("ipinfo_token") : "";
     res =
       res +
       "------------------------------" +
-      `</br><font color=#6959CD><b>节点</b> ➟ ${$environment.params} </font>`;
+      `</br><font color=#6959CD><b></b> <font>`;
 
     res =
       `<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">` +
@@ -73,7 +73,7 @@ $.token = $.getdata("ipinfo_token") ? $.getdata("ipinfo_token") : "";
     msg = res;
 
     $done({
-      title: "         流媒体查询结果",
+      title: "     流媒体查询结果",
       htmlMessage: msg,
     });
 
