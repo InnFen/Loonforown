@@ -1,0 +1,15 @@
+#!name = Emby Premium解锁
+#!desc = 点击恢复购买即可解锁。
+#!author = chxm1023
+#!tag = 解锁
+#!system = 
+#!system_version = 
+#!loon_version = 3.2.1(732)
+#!icon = https://gitlab.com/isous/loonresource/-/raw/main/Icon/Emby.png
+#!date = 2023-08-19 13:48:55
+
+[Script]
+http-response ^https:\/\/mb3admin\.com\/admin\/service(\/registration\/validateDevice|\/appstore\/register|\/registration\/validate|\/registration\/getStatus|\/supporter\/retrievekey) script-path = https://gitlab.com/isous/loonresource/-/raw/main/Script/Emby/Emby_crack.js, requires-body = true, tag = Emby Premium解锁
+
+[Mitm]
+hostname = mb3admin.com
