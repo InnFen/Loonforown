@@ -1,0 +1,19 @@
+#!name = Bilibili共享会员
+#!desc = 需要启用MitM-over-HTTP/2功能，支持iPad端。请严格填写数据，禁用则共享会员失效。
+#!author = InnFen
+#!tag = 共享会员
+#!system = 
+#!system_version = 15
+#!loon_version = 3.2.1(732)
+#!icon = https://gitlab.com/isous/loonresource/-/raw/main/Icon/Bilibili.png
+#!date = 2024-08-18 00:02:00
+#!input = Bilibili_Authorization
+#!input = Bilibili_User-Agent
+
+[Script]
+http-request ^https?:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.playerunite\.v1\.Player\/PlayViewUnite(\?.+)?$ script-path = https://gitlab.com/isous/loonresource/-/raw/main/Script/Bilibili/Bilibili_shared_membership.js, tag = iPhone端共享会员
+# http-request ^https?:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.player(unite\.v1\.Player\/PlayViewUnite|online\.v1\.PlayerOnline\/PlayerOnline) script-path = https://gitlab.com/isous/loonresource/-/raw/main/Script/Bilibili/Bilibili_shared_membership.js, tag = iPhone端会员
+http-request ^https?:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.pgc\.gateway\.player\.v2\.PlayURL\/PlayView$ script-path = https://gitlab.com/isous/loonresource/-/raw/main/Script/Bilibili/Bilibili_shared_membership.js, tag = iPad端会员
+  
+[Mitm]
+hostname = grpc.biliapi.net, app.bilibili.com
