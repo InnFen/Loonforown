@@ -10,8 +10,8 @@
 
 [Rewrite]
 
-^https:\/\/baidu\.com\/\s?from=1099b&word=g\+([^&]+).+ 302 https://www.google.com/search?&tbm=isch&q=$1
+^https:\/\/m.\baidu\.com\/\s?from=1099b&word=g\+([^&]+).+ 302 https://www.google.com/search?&tbm=isch&q=$1
 
 [Mitm]
 
-hostname = baidu.com
+hostname = m.baidu.com
