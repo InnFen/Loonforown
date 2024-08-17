@@ -26,3 +26,7 @@ http-request ^https://mobile.api.mgtv.com/v8/video/getSource script-path = https
 #播放页开通提示移除
 http-request https://pcc.api.mgtv.com/video/getSource script-path = https://raw.githubusercontent.com/InnFen/Loonforown/main/Script/MangoTV.js, tag = 播放页开通提示移除
 http-request https://pad.api.mgtv.com/v8/video/getSource script-path = https://raw.githubusercontent.com/InnFen/Loonforown/main/Script/MangoTV.js, tag = 播放页开通提示移除
+
+[mitm]
+
+hostname = *.mgtv.com, pad.api.mgtv.com, pcc.api.mgtv.com
