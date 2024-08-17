@@ -1,0 +1,23 @@
+#!name = 芒果tv共享会员
+#!desc = 支持iPad端、港区MangoTV。请严格填写数据，禁用则共享会员失效。
+#!author = InnFen
+#!tag = 解鎖
+#!system = 
+#!system_version = 
+#!loon_version = 3.2.1(732)
+#!icon = 
+#!date = 2024-08-18 03:59:55
+
+[Script]
+
+http-request ^http[s]?:\/\/mobile\.api\.mgtv\.com\/v[0-9]\/(playlist|video\/album|video\/relative|video\/list).*$ script-path = , tag = 芒果tv会员Header
+http-request https://mobile-stream.api.mgtv.com/v1/video/source? script-path = MangoTV.js, tag = MangoTV
+http-request https://nuc.api.mgtv.com/GetUserInfo script-path = , tag = 芒果tv会员Body
+#http-request https://mobile-stream.api.mgtv.com/v1/video/source script-path = , tag = 芒果tv会员Body
+
+#港区
+http-request ^https://mobile.api.mgtv.com/v8/video/getSource script-path = MangoTV.js, tag = 港区MangoTV会员
+
+#播放页开通提示移除
+http-request https://pcc.api.mgtv.com/video/getSource script-path = , tag = MangoTV
+http-request https://pad.api.mgtv.com/v8/video/getSource script-path = , tag = MangoTV
