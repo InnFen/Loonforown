@@ -8,8 +8,11 @@
 #!icon = https://github.com/InnFen/Loonforown/raw/main/Icon/MangoTV.png
 #!date = 2024-08-18 03:59:55
 
-[Script]
+[Rewrite]
+#播放页开通提示移除
+http://vip.bz.mgtv.com/client/dynamic_entry url reject
 
+[Script]
 #国区
 http-request ^http[s]?:\/\/mobile\.api\.mgtv\.com\/v[0-9]\/(playlist|video\/album|video\/relative|video\/list).*$ script-path = https://raw.githubusercontent.com/InnFen/Loonforown/main/Script/MangoTV.js, tag = 芒果tv会员Header
 http-response ^https://nuc.api.mgtv.com/GetUserInfo script-path = https://raw.githubusercontent.com/InnFen/Loonforown/main/Script/MangoTVBody.js, requires-body = true, tag = 芒果tv会员Body
