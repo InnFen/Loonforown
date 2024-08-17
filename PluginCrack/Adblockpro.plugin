@@ -6,8 +6,12 @@
 #!system_version = 
 #!loon_version = 3.2.1(732)
 #!icon = 
-#!date = 
+#!date = 2024-08-18 06:05:01
 
 [Script]
 
 http-response ^https:\/\/api\.adblockpro\.app\/verify script-path = , tag = AdBlockPro Verification
+
+[mitm]
+
+hostname = api.adblockpro.app
