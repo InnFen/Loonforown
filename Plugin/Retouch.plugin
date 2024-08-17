@@ -1,0 +1,18 @@
+#!name = 醒图会员解锁
+#!desc = 解锁醒图会员。
+#!author = InnFen
+#!tag = 解鎖
+#!system = 
+#!system_version = 
+#!loon_version = 3.2.1(732)
+#!icon = 
+#!date = 2024-08-17 03:48:55
+
+[Script]
+
+# 醒图会员(2024-03-20)@InnFen
+http-request ^https:\/\/lv-biz-api-sinfonlineb\.ulikecam\.com\/commerce\/v1\/subscription\/user_info script-path = 
+
+[mitm] 
+
+hostname = lv-biz-api-sinfonlineb.ulikecam.com
