@@ -1,0 +1,39 @@
+#!name = 网易云音乐共享会员
+#!desc = 请严格填写数据，禁用则共享会员失效。
+#!author = InnFen
+#!tag = 共享会员
+#!system = 
+#!system_version = 
+#!loon_version = 3.2.1(732)
+#!icon = https://gitlab.com/isous/loonresource/-/raw/main/Icon/NeteaseCloudMusic.png
+#!date = 2024-08-18 03:55:00
+#!input = 163_Cookie
+#!input = 163_User-Agent
+#!input = 163_MConfig-Info
+
+[Script]
+# 播放器会员皮肤
+http-request ^https:\/\/interface3?\.music\.163\.com\/eapi\/playermode\/ script-path = 
+, tag = 播放器会员皮肤
+
+# 搜索结果会员歌曲
+http-request ^https:\/\/interface3?\.music\.163\.com\/eapi\/search\/complex\/(page|rec\/song\/get) script-path = , tag = 搜索结果会员歌曲
+
+# 播放器会员歌曲
+http-request ^https:\/\/interface3?\.music\.163\.com\/eapi\/song\/(chorus|enhance\/|play\/|type\/detail\/get) script-path = , tag = 播放器会员歌曲
+http-request ^https:\/\/interface3?\.music\.163\.com\/eapi\/(v1\/artist\/top\/song|v3\/discovery\/recommend\/songs) script-path = , tag = 播放器会员歌曲
+
+# 侧边栏会员等级
+http-request ^https:\/\/interface3?\.music\.163\.com\/eapi\/vipnewcenter\/app\/resource\/newaccountpage script-path = , tag = 侧边栏会员等级
+
+# 首页歌单会员歌曲
+http-request ^https?:\/\/interface3?\.music\.163\.com\/eapi\/(homepage\/|v6\/)?playlist\/ script-path = , tag = 首页歌单会员歌曲
+
+# 动态信息流
+http-request ^https:\/\/interface3?\.music\.163\.com\/eapi\/v3\/song\/detail script-path = , tag = 动态信息流
+
+# 会员认证
+http-request ^https?:\/\/interface3?\.music\.163\.com\/eapi\/vipauth\/app\/auth\/(soundquality\/)?query script-path = , tag = 会员认证
+  
+[Mitm]
+hostname = interface3.music.163.com, interface.music.163.com
