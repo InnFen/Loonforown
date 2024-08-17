@@ -1,0 +1,24 @@
+#!name = Safari快捷搜索
+#!desc = 需要进入设置更改Safari默认搜索为DuckDuckGo。Safari内输入快捷键+空格+搜索关键词快速指定搜索引擎搜索。
+#!author = InnFen
+#!tag = 功能增强
+#!system = 
+#!system_version = 
+#!loon_version = 3.2.1(732)
+#!icon = https://gitlab.com/lodepuly/iconlibrary/-/raw/main/App_icon/120px/Safari.png
+#!date = 2024-08-18 05:23:01
+
+[Rewrite]
+
+^https:\/\/duckduckgo\.com\/\?q=g\+([^&]+).+ 302 https://www.google.com/search?&tbm=isch&q=$1
+^https:\/\/duckduckgo\.com\/\?q=bdimg\+([^&]+).+ 302 https://image.baidu.com/search/index?tn=baiduimage&word=$1
+^https:\/\/duckduckgo\.com\/\?q=gimg\+([^&]+).+ 302 https://www.google.com/search?&tbm=isch&q=$1
+^https:\/\/duckduckgo\.com\/\?q=b\+([^&]+).+ 302 https://www.bing.com/search?q=$1
+^https:\/\/duckduckgo\.com\/\?q=wk\+([^&]+).+ 302 https://zh.wikipedia.org/wiki/$1
+^https:\/\/duckduckgo\.com\/\?q=qm\+([^&]+).+ 302 https://www.qimai.cn/search/index/country/cn/search/$1
+^https:\/\/duckduckgo\.com\/\?q=gh\+([^&]+).+ 302 https://github.com/search?q=$1
+^https:\/\/duckduckgo\.com\/\?q=([^&]+).+ 302 https://www.baidu.com/s?wd=$1
+
+[Mitm]
+
+hostname = duckduckgo.com
