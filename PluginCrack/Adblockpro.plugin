@@ -1,0 +1,13 @@
+#!name = AdblockPro会员解锁
+#!desc = 非一次性解锁，点击[恢复购买]进行恢复。
+#!author = Yu9191
+#!tag = 解锁
+#!system = 
+#!system_version = 
+#!loon_version = 3.2.1(732)
+#!icon = 
+#!date = 
+
+[Script]
+
+http-response ^https:\/\/api\.adblockpro\.app\/verify script-path = , tag = AdBlockPro Verification
