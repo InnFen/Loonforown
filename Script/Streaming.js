@@ -63,8 +63,6 @@ $.token = $.getdata("ipinfo_token") ? $.getdata("ipinfo_token") : "";
     res =
       res +
       "------------------------------" +
-      `</br><font color=#6959CD><b></b> <font>`;
-
     res =
       `<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">` +
       res +
