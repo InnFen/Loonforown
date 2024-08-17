@@ -1,0 +1,15 @@
+#!name = MIX解锁
+#!desc = 非一次性解锁，点击[恢复购买]进行恢复。
+#!author = chxm1023
+#!tag = 解锁
+#!system = 
+#!system_version = 
+#!loon_version = 3.2.1(732)
+#!icon = https://gitlab.com/isous/loonresource/-/raw/main/Icon/MIX.png
+#!date = 2023-10-19 18:21:05
+
+[Script]
+http-response ^https?:\/\/cdn-bm\.camera360\.com\/api\/(mix\/(getinfo|purchase|recovery)|iap\/check-receipt) script-path = https://gitlab.com/isous/loonresource/-/raw/main/Script/MIX/MIX_crack.js, requires-body = true, tag = MIX解锁
+
+[Mitm]
+hostname = cdn-bm.camera360.com
