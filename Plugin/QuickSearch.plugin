@@ -1,5 +1,5 @@
 #!name = Safari快捷搜索
-#!desc = Safari内输入g+空格+搜索关键词切换至Google搜索。
+#!desc = 默认百度搜索，输入g+空格+搜索关键词快速切换至Google搜索。
 #!author = InnFen
 #!tag = 功能增强
 #!system = 
