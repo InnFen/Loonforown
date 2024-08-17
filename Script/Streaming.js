@@ -73,7 +73,7 @@ $.token = $.getdata("ipinfo_token") ? $.getdata("ipinfo_token") : "";
     msg = res;
 
     $done({
-      title: "     流媒体查询结果",
+      title: "   流媒体查询结果",
       htmlMessage: msg,
     });
 
