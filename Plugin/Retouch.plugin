@@ -1,5 +1,5 @@
 #!name = 醒图会员解锁
-#!desc = 解锁醒图会员。
+#!desc = 解锁会员。
 #!author = InnFen
 #!tag = 解鎖
 #!system = 
@@ -11,7 +11,7 @@
 [Script]
 
 # 醒图会员(2024-03-20)@InnFen
-http-request ^https:\/\/lv-biz-api-sinfonlineb\.ulikecam\.com\/commerce\/v1\/subscription\/user_info script-path = 
+http-request ^https:\/\/lv-biz-api-sinfonlineb\.ulikecam\.com\/commerce\/v1\/subscription\/user_info script-path = https://raw.githubusercontent.com/InnFen/Loonforown/main/Script/currency.js?token=GHSAT0AAAAAACWGUEF25MDCDN6G3O4HQKPYZWA35SA, tag = 解锁VIP权益
 
 [mitm] 
 
