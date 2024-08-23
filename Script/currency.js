@@ -3,14 +3,7 @@
 脚本日期：2024-08-23
 */
 
-var headers = $request.headers;
-
-var ck = $persistentStore.read("PCS_Cookie");
-
-if (headers['Cookie'] != undefined) {
-    headers['Cookie'] = ck;
-} else {
-    headers['cookie'] = ck;
-}
-
+var headers = $request['headers'];
+delete headers["Cookie"];
+headers['cookie'] = $persistentStore.read("PCS_Cookie");
 $done({ 'headers': headers });
