@@ -2,8 +2,8 @@
 #!desc = 非一次性解锁，点击[恢复购买]进行恢复。
 #!author = InnFen
 #!tag = 解锁
-#!system = 
-#!system_version = 
+#!system = 
+#!system_version = 
 #!loon_version = 3.2.1(732)
 #!icon = https://raw.githubusercontent.com/InnFen/Loonforown/main/Icon/Wink.png
 #!date = 2024-08-18 06:10:52
@@ -11,8 +11,8 @@
 [Script]
 
 # Wink解锁会员（2023-04-28）@InnFen
-http-response ^https:\/\/api-sub\.meitu\.com\/v2\/user\/vip_info_by_group\.json\? script-path = https://gist.githubusercontent.com/InnFen/1586c1cc5e4c00c1595e412206ca211b/raw/4aae5ad171b88617975b7458fc85490f058abff1/Wink.js, tag = Wink Membership Unlock
+http-response ^https:\/\/api-sub\.meitu\.com\/v2\/user\/vip_info_by_group\.json\? script-path = https://gist.githubusercontent.com/InnFen/1586c1cc5e4c00c1595e412206ca211b/raw/4aae5ad171b88617975b7458fc85490f058abff1/Wink.js, requires-body = true, tag = Wink Membership Unlock
 
-[mitm] 
+[mitm] 
 
 hostname = api-sub.meitu.com
