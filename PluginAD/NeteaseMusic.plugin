@@ -64,3 +64,6 @@ http-response ^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/link\/pos
 
 # 显示未关注你
 http-response ^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/user\/follow\/users\/mixed\/get script-path=https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js, requires-body=true, binary-body-mode=true, timeout=20, tag=显示未关注你
+
+# 搜索关键词替换
+http-response ^https?:\/\/interface\d?\.music\.163.com\/w?e?api\/search\/default script-path=https://raw.githubusercontent.com/Keywos/rule/main/mocks/keyword.json, requires-body=true, echo-response=true, tag=搜索关键词替换
