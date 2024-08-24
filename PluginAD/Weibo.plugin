@@ -21,5 +21,10 @@ http-response ^https?:\/\/api\.weibo\.cn\/\d\/statuses\/.*timeline script-path =
 
 http-response ^https?:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/sdkad\.php script-path = https://gitlab.com/lodepuly/vpn_tool/raw/master/Resource/Script/Weibo_intl/Weibo_intl_remove_ads.js, requires-body = true, tag = 微博轻享版去广告
 
+# 微博 VIP 解锁
+http-response ^https:\/\/new\.vip\.weibo\.cn\/aj\/appicon\/list script-path=https://raw.githubusercontent.com/xiaomaoJT/QxScript/main/rewrite/boxJS/source/wb.js, requires-body=true
+http-response ^https:\/\/api\.weibo\.cn\/device\/get script-path=https://raw.githubusercontent.com/xiaomaoJT/QxScript/main/rewrite/boxJS/source/wb.js, requires-body=true
+http-response ^https:\/\/weibointl\.api\.weibo\.cn\/portal\.php script-path=https://raw.githubusercontent.com/xiaomaoJT/QxScript/main/rewrite/boxJS/source/wb.js, requires-body=true
+
 [Mitm]
-hostname = *api.weibo.cn, sdkapp.uve.weibo.com
+hostname = *.weibo.cn, *.weibo.com
