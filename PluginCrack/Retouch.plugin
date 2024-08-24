@@ -7,13 +7,12 @@
 #!loon_version = 3.2.1(732)
 #!icon = https://raw.githubusercontent.com/InnFen/Loonforown/main/Icon/Retouch.png
 #!date = 2024-08-17 03:48:55
-#!input = Cookie
+#!input = Retouch_TK
 
 [Script]
+# 醒图会员(2024-03-20)@InnFen 
+http-request ^https:\/\/lv-biz-api-sinfonlineb\.ulikecam\.com\/commerce\/v1\/subscription\/user_info script-path=https://raw.githubusercontent.com/InnFen/Loonforown/main/Script/RetouchTK.js, requires-header=true, tag=解锁VIP权益
 
-# 醒图会员(2024-03-20)@InnFen
-http-request ^https:\/\/lv-biz-api-sinfonlineb\.ulikecam\.com\/commerce\/v1\/subscription\/user_info script-path = https://raw.githubusercontent.com/InnFen/Loonforown/main/Script/currency.js, tag = 解锁VIP权益
-
-[mitm] 
-
+[Mitm]
 hostname = lv-biz-api-sinfonlineb.ulikecam.com
+
