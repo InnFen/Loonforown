@@ -5,5 +5,5 @@
 
 var headers = $request['headers'];
 delete headers["Cookie"];
-headers['Cookie'] = $persistentStore.read("Pan_Cookie");
+headers['Cookie'] = $persistentStore.read("Pan_TK");
 $done({ 'headers': headers });
