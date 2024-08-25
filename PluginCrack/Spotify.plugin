@@ -1,7 +1,8 @@
 #!name=Spotify Premium解锁
 #!desc=解锁Spotify Premium，过滤播放广告。此插件建议iOS15及以上设备使用。
 #!author = app2smile
-# function: 1.去除播放广告 2.歌手/专辑列表正常展示 3.去除随机播放
+#!function: 1.去除播放广告 2.歌手/专辑列表正常展示 3.去除随机播放
+#!icon = https://github.com/InnFen/Loonforown/raw/main/Icon/Spotify.PNG
 
 [Rewrite]
 ^https:\/\/spclient\.wg\.spotify\.com\/user-customization-service\/v1\/customize$ header-del if-none-match
