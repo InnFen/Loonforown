@@ -4,6 +4,7 @@
 #!icon = https://raw.githubusercontent.com/leiyiyan/resource/main/icons/netease_music.png
 #!date = 2024-02-21
 #!loon_version = 3.2.1(732)
+#!tag = 定时任务
 #!select=开启音乐人任务, 启用, 禁用
 #!select=开启会员任务, 启用, 禁用
 #!select=开启云贝任务, 启用, 禁用
