@@ -1,6 +1,8 @@
 #!name=iRingo: Siri and Search
 #!desc=全面自定义[Siri与搜索]功能。
 #!author=VirgilClyne
+#!tag = 功能增强
+#!loon_version = 3.2.1(732)
 #!icon=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Siri.png
 
 [Rule]
