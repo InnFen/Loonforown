@@ -1,0 +1,17 @@
+#!name = 网易云每日任务
+#!desc = 支持云贝签到、音乐人任务、黑胶会员任务，完成以上任务后可自动领取任务奖励。
+#!author = leiyiyan
+#!icon = https://raw.githubusercontent.com/leiyiyan/resource/main/icons/netease_music.png
+#!date = 2024-02-21
+#!loon_version = 3.2.1(732)
+#!select=开启音乐人任务, 启用, 禁用
+#!select=开启会员任务, 启用, 禁用
+#!select=开启云贝任务, 启用, 禁用
+#!input = Netease_Musician_FansId
+#!input = Netease_Musician_Cookie
+#!input = Netease_Musician_UserAgent
+
+
+[Script]
+
+cron "10 0 * * *" script-path=https://raw.githubusercontent.com/leiyiyan/resource/main/script/netease_musician/task.js, timeout=600, tag=网易云每日任务
