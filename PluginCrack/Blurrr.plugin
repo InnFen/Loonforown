@@ -1,0 +1,14 @@
+#!name = Blurrr会员解锁
+#!desc = 非一次性解锁，点击[恢复购买]进行恢复。
+#!author = WeiRen0
+#!tag = 解锁 
+#!loon_version = 3.2.1(732)
+#!icon = https://raw.githubusercontent.com/InnFen/Loonforown/main/Icon/Blurrr.PNG
+#!date = 2024-08-29
+
+[Script]
+# 解锁 Camera360 VIP
+http-response ^https?:\/\/video-beats-api\.camera360\.com\/v1\/user\/vip.*$ script-path=https://raw.githubusercontent.com/InnFen/Loonforown/main/Script/Blurrr.js, requires-body=true, tag=解锁 Camera360 VIP
+
+[Mitm]
+hostname = video-beats-api.camera360.com
