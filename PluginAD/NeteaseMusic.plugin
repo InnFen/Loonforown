@@ -39,7 +39,7 @@ http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/link\/home\/fr
 http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/link\/page\/discovery\/resource\/show script-path=https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js, requires-body=true, tag=发现页处理
 
 # 首推荐页去广告
-http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/link\/page\/rcmd\/resource\/show script-path=https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js, requires-body=true
+http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/link\/page\/rcmd\/resource\/show script-path=https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js, requires-body=true, tag=首页处理
 
 # 软件更新屏蔽
 http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/ios\/upgrade\/get script-path=https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js, requires-body=true, tag=软件更新屏蔽
