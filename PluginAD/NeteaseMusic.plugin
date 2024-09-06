@@ -2,7 +2,7 @@
 #!desc = 过滤网易云音乐广告，并允许自定义界面。
 #!tag = 去广告
 #!loon_version = 3.2.1(732)
-#!author = @keywos,@ddgksf2013
+#!author = @keywos
 #!icon = https://raw.githubusercontent.com/Keywos/rule/main/tv/app/144px/Netease.png
 
 #!select = 隐藏漫游标签, 是, 否
@@ -19,81 +19,54 @@
 #!select = 隐藏首页推荐专属歌单, 是, 否
 #!select = 隐藏首页你的专属歌单, 是, 否
 
-#!date = 2024-09-06
+#!date = 2024-03-13
 
-[Mitm]
+[MITM]
 
-hostname = interface*.music.163.com
+hostname = interface.music.163.com, interface3.music.163.com, ipv4.music.163.com, interface9.music.163.com
+
+[Rule]
+
+DOMAIN,iadmusicmat.music.126.net,REJECT
+DOMAIN,iadmat.nosdn.127.net,REJECT
+DOMAIN,iadmatapk.nosdn.127.net,REJECT
+DOMAIN,httpdns.n.netease.com,REJECT
 
 [Rewrite]
 
-# 活动推广拒绝
-http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/content\/activity\/music\/jar\/template\/list reject-200
+^https?:\/\/httpdns.n\.netease\.com - reject
+^https?:\/\/httpdns\.music\.163\.com - reject
+^https?:\/\/(ipv4|interface\d?)\.music\.163.com\/e?api\/ad - reject-dict
+# 今日运势 商城 Beat专区 音乐收藏家 | type:ACTIVITY | 低至5.2折
+^https?:\/\/interface\d?\.music\.163\.com\/w?e?api\/(side-bar\/mini-program\/music-service\/account|delivery\/(batch-deliver|deliver)|moment\/tab\/info\/get|yunbei\/account\/entrance\/get) - reject-dict
+# 播放页歌名下方∶乐迷团｜关注｜播放页提示｜音乐应用红点｜播放提示?
+^https?:\/\/interface\d?\.music\.163\.com\/eapi\/(resource\/comments?\/musiciansaid|community\/friends\/fans-group\/artist\/group\/get|user\/sub\/artist|music\/songshare\/text\/recommend\/get|mine\/applet\/redpoint|resniche\/position\/play\/new\/get) - reject-dict
+# 搜索页热搜卡片｜猜你喜欢｜我的应用下方提醒
+^https?:\/\/interface\d?\.music\.163.com\/w?e?api\/(search\/(chart|default|rcmd\/keyword|specialkeyword)|resource-exposure\/|activity\/bonus\/playpage\/time\/query) - reject-dict
+^https?:\/\/interface\d?\.music\.163.com\/eapi\/(mlivestream\/entrance\/playpage|link\/(position\/show\/strategy|scene\/show)|ios\/version|v\d\/content\/exposure\/comment\/banner) - reject-dict
 
 [Script]
 
-# Tab处理
-http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/link\/home\/framework\/tab script-path=https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js, requires-body=true, tag=Tab处理
+# mian | 热推、有话想说、分享一下、歌曲下的祝福等小提示去除 ｜ 评论区 乐迷、星评等级 关注 等 图标去除
+http-response ^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/(batch|v\d\/resource\/comment\/floor\/get) script-path=https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js, requires-body=true, binary-body-mode=true, timeout=20, tag=多余图标处理
 
-# 发现页处理
-http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/link\/page\/discovery\/resource\/show script-path=https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js, requires-body=true, tag=发现页处理
-
-# 首推荐页去广告
-http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/link\/page\/rcmd\/resource\/show script-path=https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js, requires-body=true, tag=首页处理
-
-# 软件更新屏蔽
-http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/ios\/upgrade\/get script-path=https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js, requires-body=true, tag=软件更新屏蔽
-
-# 搜索默认填词去广告
-http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/search\/default\/keyword\/list script-path=https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js, requires-body=true, tag=默认搜索词填充
-
-# 猜你喜欢去广告
-http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/search\/rcmd\/keyword\/get script-path=https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js, requires-body=true,tag=猜你喜欢处理
-
-# 搜索下方Chart处理
-http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/search\/chart\/list script-path=https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js, requires-body=true, tag=搜索下方chart处理
-
-# 搜索Chart处理
-http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/search\/chart\/detail script-path=https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js, requires-body=true,tag=搜索chart处理
-
-# 相关搜索去广告
-http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/search\/suggest\/keyword\/get script-path=https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js, requires-body=true, tag=相关搜索广告
-
-# 关键词弹出处理
-http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/search\/specialkeyword\/get script-path=https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js, requires-body=true, tag=关键词广告
-
-# 广告加载
-http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/ad\/loading\/get script-path=https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js, requires-body=true, tag=Loading
-
-# 广告实时
-http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/ad\/loading\/current script-path=https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js, requires-body=true, tag=Loading
-
-# Get
-http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/ad\/get script-path=https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js, requires-body=true, tag=AdGet
-
-# 插入广告去广告
-http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/link\/position\/show\/resource script-path=https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js, requires-body=true, tag=插入广告处理
-
-# 歌单顶部广告去广告
-http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/link\/scene\/show\/resource script-path=https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js, requires-body=true, tag=歌单顶部处理
-
-# 弹窗免费听歌去广告
-http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/vip\/cashier\/tspopup\/get script-path=https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js, requires-body=true, tag=免费听歌弹窗
-
-# 侧栏账户去广告
-http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/vipnewcenter\/app\/resource\/newaccountpage script-path=https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js, requires-body=true,tag=VipNewCenter
-
-# 侧栏推广去广告
-http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/side-bar\/mini-program\/music-service\/account script-path=https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js, requires-body=true, tag=SideBar
-
-# 侧边VIP推广去广告
-http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/delivery\/deliver script-path=https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js, requires-body=true, tag=侧栏Vip推广
-
-# 侧边浮层去广告
-http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/delivery\/batch-deliver script-path=https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js, requires-body=true, tag=侧边浮层处理
-
-# 评论区去广告
-http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/batch script-path=https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js, requires-body=true, tag=Batch
-
-# 会员伪装
+# 伪vip
 http-response ^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/(music-vip-membership\/client\/vip\/info|vipnewcenter\/app\/resource\/newaccountpage) script-path=https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js, requires-body=true, binary-body-mode=true, timeout=20, tag=会员伪装
+
+# tab
+http-response ^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/link\/home\/framework\/tab script-path=https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js, requires-body=true, binary-body-mode=true, timeout=20, tag=TAB处理
+
+# 推荐 | home | 主页
+http-response ^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/(homepage\/block\/page|link\/page\/rcmd\/(resource\/show|block\/resource\/multi\/refresh)) script-path=https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js, requires-body=true, binary-body-mode=true, timeout=20, tag=主页面处理
+
+# 发现
+http-response ^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/link\/page\/discovery\/resource\/show script-path=https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js, requires-body=true, binary-body-mode=true, timeout=20, tag=发现页面处理
+
+# effect
+http-response ^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/song\/play\/more\/list\/v\d script-path=https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js, requires-body=true, binary-body-mode=true, timeout=20, tag=Effect
+
+# 我的 MyPageBar ad
+http-response ^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/link\/position\/show\/resource script-path=https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js, requires-body=true, binary-body-mode=true, timeout=20, tag=Mybarad
+
+# 显示未关注你
+http-response ^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/user\/follow\/users\/mixed\/get script-path=https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js, requires-body=true, binary-body-mode=true, timeout=20, tag=显示未关注你
