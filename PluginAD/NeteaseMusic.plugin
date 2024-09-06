@@ -51,7 +51,7 @@ http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/search\/defaul
 http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/search\/rcmd\/keyword\/get script-path=https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js, requires-body=true,tag=猜你喜欢处理
 
 # 搜索下方Chart处理
-http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/search\/chart\/list script-path=https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js, requires-body=true,搜索下方chart处理
+http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/search\/chart\/list script-path=https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js, requires-body=true, tag=搜索下方chart处理
 
 # 搜索Chart处理
 http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/search\/chart\/detail script-path=https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js, requires-body=true,tag=搜索chart处理
