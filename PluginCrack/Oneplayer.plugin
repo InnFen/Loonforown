@@ -1,0 +1,1 @@
+http-response ^https?:\/\/api\.revenuecat\.com\/v1\/(receipts|subscribers\/\$RCAnonymousID%3A\w{32}) script-path=OnePlayer.js, requires-body=true, timeout=10, tag=OneOlayer
