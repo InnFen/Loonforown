@@ -11,6 +11,10 @@
 #!input = 163_User-Agent
 #!input = 163_MConfig-Info
 
+[Rewrite]
+
+^https?:\/\/interface\d?\.music\.163\.com\/e?api\/vip\/cashier\/tspopup\/get - reject-200
+
 [Script]
 
 http-request ^https?:\/\/interface\d?\.music\.163\.com\/e?api\/(song\/enhance\/player\/url\/v\d|vipauth\/app\/auth\/query) script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Scripts/NeteaseCloudMusic/netease.js, requires-body=true, timeout=60, tag=网易云音乐会员
