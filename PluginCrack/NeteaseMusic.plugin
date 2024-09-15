@@ -1,25 +1,16 @@
 #!name = 网易云音乐共享会员
-#!desc = 请严格填写数据，禁用则共享会员失效。
+#!desc = 搭配去广告插件使用，请严格填写数据，禁用则共享会员失效。
 #!author = Yuhen0101
 #!tag = 共享会员
 #!system = 
 #!system_version = 
 #!loon_version = 3.2.1(732)
 #!icon = https://gitlab.com/isous/loonresource/-/raw/main/Icon/NeteaseCloudMusic.png
-#!date = 2024-08-18 03:55:00
+#!date = 2024-09-15
 #!input = 163_Cookie
 #!input = 163_User-Agent
 #!input = 163_MConfig-Info
 
-[Rewrite]
-
-#^https?:\/\/interface\d?\.music\.163\.com\/e?api\/vip\/cashier\/tspopup\/get - reject-200
-
 [Script]
 
-#http-response ^https?:\/\/interface\d?\.music\.163\.com\/e?api\/(mine\/collect\/header\/info|v\d\/user\/detail\/\d+|vipnewcenter\/app\/resource\/newaccountpage|music-vip-membership\/client\/vip\/info|batch|playlist\/privilege|search\/complex\/page|v\d\/(discovery\/recommend\/songs|playlist\/detail)) script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Scripts/NeteaseCloudMusic/netease.js, requires-body=true, binary-body-mode=true, timeout=60, tag=网易云重写
-
 http-request ^https?:\/\/interface\d?\.music\.163\.com\/e?api\/(song\/enhance\/player\/url\/v\d|vipauth\/app\/auth\/query) script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Scripts/NeteaseCloudMusic/netease.js, requires-body=true, timeout=10, tag=网易云音乐会员
-
-[MitM]
-hostname = interface*.music.163.com
