@@ -1,1 +1,17 @@
+#!name = OnePlayer会员解锁
+#!desc = 非一次性解锁，点击[恢复购买]进行恢复。
+#!author = InnFen
+#!tag = 解锁
+#!system = 
+#!system_version = 
+#!loon_version = 3.2.1(732)
+#!icon = https://raw.githubusercontent.com/InnFen/Loonforown/main/Icon/Oneplayer.PNG
+#!date = 2024-09-15
+
+[Script]
+
 http-response ^https?:\/\/api\.revenuecat\.com\/v1\/(receipts|subscribers\/\$RCAnonymousID%3A\w{32}) script-path=OnePlayer.js, requires-body=true, timeout=10, tag=OneOlayer
+
+[mitm]
+
+hostname = api.revenuecat.com
