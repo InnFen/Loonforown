@@ -23,7 +23,7 @@
 
 [MITM]
 
-hostname = interface*.music.163.com, ipv4.music.163.com
+hostname = interface*.music.163.com
 
 [Rule]
 
