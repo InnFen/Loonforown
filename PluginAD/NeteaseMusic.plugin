@@ -23,14 +23,14 @@
 
 [MITM]
 
-hostname = interface*.music.163.com
+hostname = interface.music.163.com, interface3.music.163.com, ipv4.music.163.com, interface9.music.163.com
 
 [Rule]
 
-#DOMAIN,iadmusicmat.music.126.net,REJECT
-#DOMAIN,iadmat.nosdn.127.net,REJECT
-#DOMAIN,iadmatapk.nosdn.127.net,REJECT
-#DOMAIN,httpdns.n.netease.com,REJECT
+DOMAIN,iadmusicmat.music.126.net,REJECT
+DOMAIN,iadmat.nosdn.127.net,REJECT
+DOMAIN,iadmatapk.nosdn.127.net,REJECT
+DOMAIN,httpdns.n.netease.com,REJECT
 
 [Rewrite]
 
