@@ -1,0 +1,23 @@
+#!name = Revenuecat解锁配置  
+#!desc = 用于修改与清理 Revenuecat 验证请求。
+#!author = Yu9191
+#!tag = 解锁  
+#!system =   
+#!system_version =   
+#!loon_version = 3.2.1(732)  
+#!icon = https://raw.githubusercontent.com/InnFen/Loonforown/main/Icon/
+#!date = 2025-05-31 12:00:00  
+
+[Script]
+# 修改
+http-response ^https:\/\/(api\.revenuecat\.com|api\.rc-backup\.com)\/.+\/(receipts$|subscribers\/[^/]+$) script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/Revenuecat.js, requires-body=true, tag=Revenuecat Modify
+
+# 清理
+http-request ^https:\/\/(api\.revenuecat\.com|api\.rc-backup\.com)\/.+\/(receipts$|subscribers\/[^/]+$) script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/Revenuecat.js, tag=Revenuecat Clean
+
+[Reject]
+# 拦截
+https://api.lianjiu.fun/app/api/v1/profile
+
+[MITM]
+hostname = api.revenuecat.com, api.rc-backup.com, api.lianjiu.fun
