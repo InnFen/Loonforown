@@ -9,8 +9,7 @@
 #!date = 2025-05-31 12:10:00  
 
 [Script]
-# ～ RevenueCat@ddgksf2013
-BuyiTunesVip = type=http-response, pattern=^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$, script-path=https://gist.githubusercontent.com/ddgksf2013/9e0f6c7341beea09a31aa309d9d7f502/raw/buyitunes.js, requires-body=true, max-size=-1, timeout=60
+http-response ^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$ script-response-body https://gist.githubusercontent.com/ddgksf2013/9e0f6c7341beea09a31aa309d9d7f502/raw/buyitunes.js
 
 [MITM]
 hostname = %APPEND% buy.itunes.apple.com
