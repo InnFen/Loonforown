@@ -1,0 +1,16 @@
+#!name = iTunes会员解锁  
+#!desc = 解锁 BuyiTunesVip，伪装 iTunes 验证响应。
+#!author = ddgksf2013
+#!tag = 解锁  
+#!system =   
+#!system_version =   
+#!loon_version = 3.2.1(732)  
+#!icon = https://raw.githubusercontent.com/InnFen/Loonforown/main/Icon/
+#!date = 2025-05-31 12:10:00  
+
+[Script]
+# ～ RevenueCat@ddgksf2013
+BuyiTunesVip = type=http-response, pattern=^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$, script-path=https://gist.githubusercontent.com/ddgksf2013/9e0f6c7341beea09a31aa309d9d7f502/raw/buyitunes.js, requires-body=true, max-size=-1, timeout=60
+
+[MITM]
+hostname = %APPEND% buy.itunes.apple.com
