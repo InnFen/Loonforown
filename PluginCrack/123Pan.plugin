@@ -1,0 +1,17 @@
+#!name = 123pan去广告增强  
+#!desc = 去除 123pan 广告并增强下载功能  
+#!author = ddgksf2013
+#!tag = 去广告
+#!system =   
+#!system_version =   
+#!loon_version = 3.2.1(732)  
+#!icon = https://raw.githubusercontent.com/InnFen/Loonforown/main/Icon/
+#!date = 2025-05-31 12:30:00  
+
+[Script]
+# ～ 123pan@ddgksf2013
+123pan.Ads = type=http-response, pattern=^https?:\/\/www\.123pan\.com\/s\/[0-9a-zA-Z=_/-]+\.html, script-path=https://github.com/ddgksf2013/Scripts/raw/master/123pan.js, requires-body=true, max-size=-1, timeout=60
+123pan.Enhance = type=http-request, pattern=^https?:\/\/www\.123pan\.com\/b\/api\/share\/download\/info, script-path=https://github.com/ddgksf2013/Scripts/raw/master/123pan.js, timeout=60
+
+[MITM]
+hostname = %APPEND% www.123pan.com
