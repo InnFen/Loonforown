@@ -1,0 +1,73 @@
+[Rule]
+# ChatGPT
+DOMAIN-KEYWORD,chatgpt-async-webps-prod-,DIRECT
+DOMAIN-SUFFIX,webpubsub.azure.com,DIRECT
+DOMAIN-KEYWORD,openaicom-api-,DIRECT
+DOMAIN-SUFFIX,azurefd.net,DIRECT
+HOST-SUFFIX,chat.openai.com,DIRECT
+DOMAIN,chatgpt.livekit.cloud,DIRECT
+DOMAIN,host.livekit.cloud,DIRECT
+DOMAIN,openai.com.cdn.cloudflare.net,DIRECT
+DOMAIN,openaiapi-site.azureedge.net,DIRECT
+DOMAIN,openaicomproductionae4b.blob.core.windows.net,DIRECT
+DOMAIN,production-openaicom-storage.azureedge.net,DIRECT
+DOMAIN,turn.livekit.cloud,DIRECT
+DOMAIN-SUFFIX,chat.com,DIRECT
+DOMAIN-SUFFIX,chatgpt.com,DIRECT
+DOMAIN-SUFFIX,oaistatic.com,DIRECT
+DOMAIN-SUFFIX,oaiusercontent.com,DIRECT
+DOMAIN-SUFFIX,openai.com,DIRECT
+DOMAIN-SUFFIX,sora.com,DIRECT
+
+# Copilot
+DOMAIN,api.githubcopilot.com,DIRECT
+DOMAIN,copilot-proxy.githubusercontent.com,DIRECT
+DOMAIN,copilot.microsoft.com,DIRECT
+DOMAIN,sydney.bing.com,DIRECT
+DOMAIN,www.bing.com,DIRECT
+
+# Gemini
+DOMAIN,ai.google.dev,DIRECT
+DOMAIN,aida.googleapis.com,DIRECT
+DOMAIN,aistudio.google.com,DIRECT
+DOMAIN,alkalicore-pa.clients6.google.com,DIRECT
+DOMAIN,alkalimakersuite-pa.clients6.google.com,DIRECT
+DOMAIN,bard.google.com,DIRECT
+DOMAIN,deepmind.com,DIRECT
+DOMAIN,deepmind.google,DIRECT
+DOMAIN,geller-pa.googleapis.com,DIRECT
+DOMAIN,gemini.google.com,DIRECT
+DOMAIN,generativeai.google,DIRECT
+DOMAIN,generativelanguage.googleapis.com,DIRECT
+DOMAIN,makersuite.google.com,DIRECT
+DOMAIN,proactivebackend-pa.googleapis.com,DIRECT
+
+# Claude
+DOMAIN-SUFFIX,anthropic.com,DIRECT
+DOMAIN-SUFFIX,claude.ai,DIRECT
+DOMAIN-SUFFIX,claudeusercontent.com,DIRECT
+IP-CIDR,160.79.104.0/23,no-resolve,DIRECT
+IP-CIDR6,2607:6bc0::/48,no-resolve,DIRECT
+
+# JetBrains AI
+DOMAIN-SUFFIX,grazie.ai,DIRECT
+DOMAIN-SUFFIX,grazie.aws.intellij.net,DIRECT
+DOMAIN-SUFFIX,jetbrains.ai,DIRECT
+
+# Meta AI
+DOMAIN,imagine.meta.com,DIRECT
+DOMAIN-SUFFIX,meta.ai,DIRECT
+
+# Perplexity
+DOMAIN-SUFFIX,pplx.ai,DIRECT
+DOMAIN-SUFFIX,perplexity.ai,DIRECT
+DOMAIN-SUFFIX,perplexity.com,DIRECT
+
+# Mistral AI
+DOMAIN,chat.mistral.ai,DIRECT
+DOMAIN,console.mistral.ai,DIRECT
+DOMAIN-SUFFIX,mistral.ai,DIRECT
+
+# Grok AI
+DOMAIN,api.x.ai,DIRECT
+DOMAIN-SUFFIX,x.ai,DIRECT
