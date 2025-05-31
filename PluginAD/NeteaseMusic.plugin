@@ -53,4 +53,4 @@ http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/comment\/feed\
 http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/resource-exposure\/config reject-200, tag=网易云购买实体专辑
 
 [MITM]
-hostname = %APPEND% interface*.music.163.com
+hostname = interface.music.163.com, interface3.music.163.com, ipv4.music.163.com, interface9.music.163.com
