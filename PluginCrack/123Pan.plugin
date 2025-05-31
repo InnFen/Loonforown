@@ -9,9 +9,9 @@
 #!date = 2025-05-31 12:30:00  
 
 [Script]
-# ～ 123pan@ddgksf2013
-123pan.Ads = type=http-response, pattern=^https?:\/\/www\.123pan\.com\/s\/[0-9a-zA-Z=_/-]+\.html, script-path=https://github.com/ddgksf2013/Scripts/raw/master/123pan.js, requires-body=true, max-size=-1, timeout=60
-123pan.Enhance = type=http-request, pattern=^https?:\/\/www\.123pan\.com\/b\/api\/share\/download\/info, script-path=https://github.com/ddgksf2013/Scripts/raw/master/123pan.js, timeout=60
+http-response ^https?:\/\/www\.123pan\.com\/s\/[0-9a-zA-Z=_/-]+\.html script-response-body https://github.com/ddgksf2013/Scripts/raw/master/123pan.js
+
+http-request ^https?:\/\/www\.123pan\.com\/b\/api\/share\/download\/info script-request-header https://github.com/ddgksf2013/Scripts/raw/master/123pan.js
 
 [MITM]
 hostname = %APPEND% www.123pan.com
