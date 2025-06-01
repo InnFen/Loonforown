@@ -5,13 +5,12 @@
 #!system =   
 #!system_version =   
 #!loon_version = 3.2.1(732)  
-#!icon = https://raw.githubusercontent.com/InnFen/Loonforown/main/Icon/
+#!icon = https://raw.githubusercontent.com/InnFen/Loonforown/main/Icon/123Pan.png
 #!date = 2025-05-31 12:30:00  
 
 [Script]
-http-response ^https?:\/\/www\.123pan\.com\/s\/[0-9a-zA-Z=_/-]+\.html script-response-body https://github.com/ddgksf2013/Scripts/raw/master/123pan.js
-
-http-request ^https?:\/\/www\.123pan\.com\/b\/api\/share\/download\/info script-request-header https://github.com/ddgksf2013/Scripts/raw/master/123pan.js
+http-response ^https?:\/\/www\.123pan\.com\/s\/[0-9a-zA-Z=_/-]+\.html script-path=https://github.com/ddgksf2013/Scripts/raw/master/123pan.js, requires-body=true, tag=123盘分享页面优化
+http-request ^https?:\/\/www\.123pan\.com\/b\/api\/share\/download\/info script-path=https://github.com/ddgksf2013/Scripts/raw/master/123pan.js, tag=123盘下载信息优化
 
 [MITM]
 hostname = %APPEND% www.123pan.com
