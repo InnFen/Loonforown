@@ -5,11 +5,11 @@
 #!system =   
 #!system_version =   
 #!loon_version = 3.2.1(732)  
-#!icon = https://raw.githubusercontent.com/InnFen/Loonforown/main/Icon/
+#!icon = https://raw.githubusercontent.com/InnFen/Loonforown/main/Icon/iTunes.png
 #!date = 2025-05-31 12:10:00  
 
 [Script]
-http-response ^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$ script-response-body https://gist.githubusercontent.com/ddgksf2013/9e0f6c7341beea09a31aa309d9d7f502/raw/buyitunes.js
+http-response ^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$ script-path=https://gist.githubusercontent.com/ddgksf2013/9e0f6c7341beea09a31aa309d9d7f502/raw/buyitunes.js, requires-body=true, tag=AppStore内购解锁
 
 [MITM]
 hostname = %APPEND% buy.itunes.apple.com
