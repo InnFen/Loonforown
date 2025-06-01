@@ -1,0 +1,21 @@
+#!name = Goodnotes6解锁会员
+#!desc = Goodnotes解锁内购会员，非一次性解锁，点击[恢复购买]进行恢复。
+#!author = ddgksf2013
+#!tag = 解锁
+#!system =   
+#!system_version =   
+#!loon_version = 3.2.1(732)  
+#!icon = https://raw.githubusercontent.com/InnFen/Loonforown/main/Icon/Goodnotes.png
+#!date = 2025-06-01 18:50:00
+
+[Script]
+
+http-response ^https:\/\/isi\.csan\.[a-z.]+\/.+\/(receipts$|subscribers\/[^/]+$) script-path=https://gist.githubusercontent.com/ddgksf2013/980624ef4722ee4ca805a74dc61ca9a3/raw/Goodbility.Vip.js requires-body=true max-size=-1 timeout=60
+
+http-request ^https:\/\/isi\.csan\.[a-z.]+\/.+\/(receipts|subscribers) script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/master/deleteHeader.js timeout=60
+
+http-response ^https?:\/\/notability\.com\/global script-path=https://gist.githubusercontent.com/ddgksf2013/980624ef4722ee4ca805a74dc61ca9a3/raw/Goodbility.Vip.js requires-body=true max-size=-1 timeout=60
+
+[Mitm]
+
+hostname = isi.csan.*, notability.com
