@@ -1,0 +1,10 @@
+[Rule]
+DOMAIN-SUFFIX,revolut.com,REVO
+DOMAIN-SUFFIX,revolut.me,REVO
+DOMAIN-SUFFIX,revolut.net,REVO
+DOMAIN-SUFFIX,revolut.tech,REVO
+DOMAIN-SUFFIX,revolut.us,REVO
+DOMAIN-SUFFIX,revolutapi.io,REVO
+DOMAIN-SUFFIX,revolutcards.com,REVO
+DOMAIN-SUFFIX,r.revolut.com,REVO
+DOMAIN-KEYWORD,revolut,REVO
