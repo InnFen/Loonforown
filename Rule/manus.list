@@ -1,0 +1,8 @@
+# Manus AI
+DOMAIN,api.manus.ai,POLICY
+DOMAIN-SUFFIX,manus.ai,POLICY
+DOMAIN-SUFFIX,manus.im,POLICY
+DOMAIN-SUFFIX,manusai.io,POLICY
+# 可选：关键词兜底
+DOMAIN-KEYWORD,manusai,POLICY
+DOMAIN-KEYWORD,manus.,POLICY
